@@ -14,3 +14,5 @@ sql
 -well structured db
 
 --solves real problem
+
+use admin as username and password 
