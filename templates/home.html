@@ -1,0 +1,30 @@
+{% extends "layout.html"%}
+{% block content %}
+
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='home.css') }}">
+
+<style>
+    .checked {
+      color: orange;
+    }
+    </style>
+<div class="table-users">
+    <div class="header">{{titletext}}
+    </div>
+    
+    <table cellspacing="0">
+       <tr style="text-align: center;">
+          <th>Item Code</th>
+          <th>Item Name</th>
+          <th>Price</th>
+       </tr>
+       {% for row in output_data %}
+            <tr style="cursor:pointer;">
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+                <td>{{row[2]}}</td>
+            </tr>
+       {% endfor %}
+    </table>
+ </div>
+ {% endblock content%}

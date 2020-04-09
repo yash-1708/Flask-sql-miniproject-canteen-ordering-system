@@ -1,0 +1,40 @@
+{% extends "layout.html"%}
+{% block content %}
+<meta http-equiv="refresh" content="5" >
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='home.css') }}">
+
+<style>
+    .checked {
+      color: orange;
+    }
+    </style>
+<div class="table-users">
+    <div class="header">{{titletext}}
+    </div>
+    
+    <table cellspacing="0">
+       <tr style="text-align: center;">
+          <th>Order id</th>
+          <th>Item Code</th>
+          <th>Student Name</th>
+          <th>Item Name</th>
+          <th>Date</th>
+       </tr>
+       {% for row in output_data %}
+            <tr style="cursor:pointer;">
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+                <td>{{row[2]}}</td>
+                <td>{{row[5]}}</td>
+                <td>{{row[3]}}</td>
+            </tr>
+       {% endfor %}
+    </table>
+ </div>
+ <div>
+    <form action="/adminhome" method="POST">
+
+        <center><button type="submit" id="clear_button" name="clear_button" class="btn btn-default">Done for the Day!</button></center>
+    </form>
+ </div>
+ {% endblock content%}
